@@ -1,0 +1,39 @@
+﻿@page
+@model AppSecurityAssignment.Pages.Homepage.HomepageModel
+@{
+}
+
+
+
+  
+    <div style="border:solid 1px black">
+    <div>
+    <img id="imgPreview" class="rounded-circle" style="height:300px;width:300px;object-fit:cover"
+                 src="@(Model.memberList.photo)" 
+                  />
+
+
+    </div>     
+    Name: @Model.memberList.fullName <br>
+    Email Address: @Model.memberList.emailAddress <br>
+    Gender: @Model.memberList.gender <br>
+    Mobile Number: @Model.memberList.phoneNo <br>
+    Credit Card Number: @Model.creditcard <br>
+    Delivery Address: @Model.memberList.deliveryAddress <br>
+    About Me :@Model.memberList.aboutMe
+        </div>
+    
+    <br>
+   
+
+<script>
+    function showImgPreview(input) {
+
+        var uploadimg = new FileReader();
+        uploadimg.onload = function (displayimg) {
+            $("#imgPreview").attr('src', displayimg.target.result);
+        }
+
+
+    }
+</script>

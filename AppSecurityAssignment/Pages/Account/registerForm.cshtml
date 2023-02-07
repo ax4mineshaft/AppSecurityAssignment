@@ -1,0 +1,133 @@
+﻿@page
+@model AppSecurityAssignment.Pages.Registration.registerFormModel
+@{
+}
+<div class="col-sm-12 col-md-12 col-lg-4">
+			<h1 class="mb-3">Register </h1>
+
+			<form enctype="multipart/form-data" method="post">
+				<div asp-validation-summary="All" class="text-danger"></div>
+		<div class="mb-3">
+			<label class="form-label" asp-for="NewMember.fullName">Full Name</label>
+			<input type="Text" asp-for="NewMember.fullName" class="form-control" />
+			<span asp-validaton-for="NewMember.fullName" class="text-danger"></span>
+		</div>
+
+		<div data-role="main" class="ui-content">
+      <fieldset data-role="controlgroup">
+				<label class="form-label" asp-for="NewMember.gender">Gender: </label><br>
+        
+				<input type="radio" asp-for="NewMember.gender" value="male" checked>
+				<label for="male">Male</label>
+				<br>
+        
+				<input type="radio" asp-for="NewMember.gender" value="female">
+				<label for="female">Female</label>
+
+      </fieldset>
+	  </div>
+	  <br >
+	  <div class="mb-3">
+					<label class="form-label" asp-for="NewMember.phoneNo">Phone Number</label>
+					<input type="Text" asp-for="NewMember.phoneNo" class="form-control" />
+					<span asp-validaton-for="NewMember.phoneNo" class="text-danger"></span>
+				</div>
+		<div class="mb-3">
+			<label class="form-label" asp-for="NewMember.creditCardNo">Credit Card Number</label>
+			<input type="Text" asp-for="NewMember.creditCardNo" class="form-control" />
+			<span asp-validaton-for="NewMember.creditCardNo" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label class="form-label" asp-for="NewMember.deliveryAddress">Delivery Address</label>
+			<input type="Text" asp-for="NewMember.deliveryAddress" class="form-control" />
+			
+		</div>
+
+				<div class="mb-3">
+					<label class="form-label" asp-for="NewMember.emailAddress">Email Address</label>
+					<input type="Text" asp-for="NewMember.emailAddress" class="form-control" />
+					<span asp-validaton-for="NewMember.email" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" asp-for="NewMember.password">Password</label>
+					<input type="Text" asp-for="NewMember.password" class="form-control"/>
+				<span asp-validaton-for="NewMember.password" class="text-danger"></span>
+					
+					
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" asp-for="NewMember.passwordcfm">Confirm Password</label>
+					<input type="Text" asp-for="NewMember.passwordcfm" class="form-control" />
+					<span asp-validaton-for="NewMember.passwordcfm" class="text-danger"></span>
+				</div>
+
+
+				<div class="mb-3">
+			<label class="form-label" asp-for="Image">Photo</label>
+			<div class="col-sm-10">
+				<div class="custom-file">
+					<input type="file" asp-for="Image" class="form-control custom-file-input"/>
+					
+				</div>
+			</div>
+		</div>
+		<div class="mb-3">
+			<label class="form-label" asp-for="NewMember.aboutMe">About Me</label>
+			<input type="Text" asp-for="NewMember.aboutMe" class="form-control" />
+			
+		</div>
+
+				<div class="mb-3">
+					<button type="submit" class="btn btn-primary">Register</button>
+				</div>
+				
+				
+
+
+
+			</form>
+		</div>
+
+					<script type="text/javascript">
+						function validate(){
+		var str = document.getElementById('<%=validatePassword.ClientID %>').value;
+		if (str.length < 12){
+			document.getElementById("validatePassword").innerHTML = "Password Length must be 12 Characters";
+			document.getElementById("validatePassword").style.color = "Red";
+			return("too_short");
+		}
+		else if (str.search(/[0-9]/)==-1) {
+			document.getElementById("validatePassword").innerHTML = "Password requires at least 1 number";
+			document.getElementById("validatePassword").style.color = "Red";
+			return ("no_number");
+		}
+		else if (str.search(/a-z/) == -1) {
+			document.getElementById("validatePassword").innerHTML = "Password requires at least 1 lower case alphabet";
+			document.getElementById("validatePassword").style.color = "Red";
+			return ("no_lower_case");
+		}
+		else if (str.search(/A-Z/) == -1) {
+			document.getElementById("validatePassword").innerHTML = "Password requires at least 1 upper case alphabet";
+			document.getElementById("validatePassword").style.color = "Red";
+			return ("no_upper_case");
+		}
+		else if (str.search(/^/) == -1) {
+			document.getElementById("validatePassword").innerHTML = "Password requires at least 1 special character";
+			document.getElementById("validatePassword").style.color = "Red";
+			return ("no_special_char");
+		}
+		document.getElementById("validatePassword").innerHTML = "Excellent";
+		document.getElementById("validatePassword").style.color = "Blue";
+
+
+
+
+
+
+
+						}
+						
+						
+						</script>

@@ -1,0 +1,41 @@
+﻿@page
+@model AppSecurityAssignment.Pages.Login.LoginModel
+@{
+
+	<div class="col-sm-12 col-md-12 col-lg-4">
+			<h1 class="mb-3">Login </h1>
+
+
+	<form method="post">
+				<div asp-validation-summary="All" class="text-danger"></div>
+		
+
+		
+    
+	 
+		
+
+				<div class="mb-3">
+					<label class="form-label" asp-for="LModel.loginEmail">Email Address</label>
+					<input type="Text" asp-for="LModel.loginEmail" class="form-control" />
+					<span asp-validaton-for="NewMember.email" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" asp-for="LModel.loginPassword">Password</label>
+				<input type="Text" asp-for="LModel.loginPassword" class="form-control" />
+					<span asp-validaton-for="NewMember.password" class="text-danger"></span>
+				</div>
+				<div class="mb-3 form-check">
+				<input type="checkbox" asp-for="LModel.RememberMe" class="form-check-input"/>
+				<label class="form-check-label" asp-for="LModel.RememberMe">Remember Me?</label>
+				
+				</div>
+				
+
+				<div class="mb-3">
+					<button type="submit" class="btn btn-primary">Login</button>
+				</div>
+			</form>
+			</div>
+}
